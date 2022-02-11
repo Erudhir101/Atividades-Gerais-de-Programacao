@@ -35,8 +35,6 @@ void piramide(int high)
     }
 }
 
-
-
 int main()
 {
     //piramide(5);
