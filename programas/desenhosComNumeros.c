@@ -3,7 +3,7 @@
 void quadrado(int high)
 {
     int i, j;
-    for (int i = 1; i < high + 1; i++)
+    for (i = 1; i < high + 1; i++)
     {
         printf("%d ", i);
         if (i == 1)
@@ -27,7 +27,7 @@ void piramide(int high)
 {
     for (int i = high; i > 0; i--)
     {
-        for (int j = 0; j < i; j++)
+        for (int j = 1; j < i; j++)
             printf(" ");
         for (int k = 0; k <= high - i; k++)
             printf("%d ", i);
@@ -37,7 +37,8 @@ void piramide(int high)
 
 int main()
 {
-    //piramide(5);
+    piramide(5);
+    printf("\n");
     quadrado(5);
     return 0;
 }
