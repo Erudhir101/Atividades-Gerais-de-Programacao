@@ -188,6 +188,7 @@ void game()
     LIMPAR_BUFFER;
     for (i = 0; i < QTD_ROUD; i++)
     {
+        LIMPAR_TELA;
         printf(" ---------\n| ROUND %i |\n ---------\n", (i + 1));
         telaPalavra(palavra);
         printf("\n");
@@ -211,10 +212,20 @@ void game()
         if (verifGanhou(palavra))
         {
             printf("\n\n -----------------------\n");
-            printf("  VOCE GANHOU O JOGO!!!\n  A PALAVRA ERA \"%s\"\n  CHUTES NECESSARIOS: %d\n", palavra.string, (i + 1));
+            textcolor(GREEN);
+            printf("  VOCE GANHOU O JOGO!!!\n");
+            textcolor(WHITE);
+            printf("  A PALAVRA ERA \"%s\"\n  CHUTES NECESSARIOS: %d\n", palavra.string, (i + 1));
             break;
         }
-        LIMPAR_TELA;
+        else
+        {
+            printf("\n\n -----------------------\n");
+            textcolor(RED);
+            printf("  VOCE PERDEU O JOGO!!!\n");
+            textcolor(WHITE);
+            printf("  A PALAVRA ERA \"%s\"\n", palavra.string);
+        }
     }
 }
 
